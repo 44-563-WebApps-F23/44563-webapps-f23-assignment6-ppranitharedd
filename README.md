@@ -3,5 +3,5 @@
 Introduction to Java Script and DOM
 
 ["Hosted at author.html"]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-ppranitharedd/author.html)
-["Hosted at cruise.html"]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-ppranitharedd/author.html)
-["Hosted at tips.html"]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-ppranitharedd/author.html)
+["Hosted at cruise.html"]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-ppranitharedd/cruise.html)
+["Hosted at tips.html"]( https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment6-ppranitharedd/tips.html)
