@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Cruise Title</title>
+ </head>
+ <!-- Form group with three labeled checkbox input elements -->
+<form>
+    <label for="cabin">Shares Cabin</label>
+    <input type="checkbox" id="cabin" value="True"><br>
+
+    <label for="breakfast">Breakfast</label>
+    <input type="checkbox" id="breakfast" value="True"><br>
+
+    <label for="pool">Pool Pass</label>
+    <input type="checkbox" id="pool" value="False"><br>
+
+    <!-- Add a button to select a cruise -->
+    <input type="button" onclick="selectCruise()" value="Select a cruise"><br>
+</form>
+
+<!-- Tagged element to display results -->
+<p id="cruiseResult"></p>
+
+<!-- Form for updating cruise properties -->
+<form>
+    <label for="days">Enter the number of days</label>
+    <input type="text" id="days" value="7"><br>
+
+    <label for="price">Enter price</label>
+    <input type="text" id="price" value="1000"><br>
+
+    <!-- Add a button to update the cruise -->
+    <input type="button" onclick="updateCruise()" value="Update the Cruise"><br>
+</form>
+<p id="cruiseResult"></p>
+<body>
+
+<h2>Pranitha Reddy Policepatel goes on a cruise</h2>
+
+<form>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">What is your nickname </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Get values from form">
+</form>
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+// Declare a global variable to store cruise options
+var my_cruise = {};
+
+// Function to select a cruise based on checkbox values
+function selectCruise() {
+    // Reset my_cruise to an empty object
+    my_cruise = {};
+
+    // Get checkbox elements by their IDs
+    let cabinCheckbox = document.getElementById("cabin");
+    let breakfastCheckbox = document.getElementById("breakfast");
+    let poolCheckbox = document.getElementById("pool");
+
+    // Set properties of my_cruise based on checkbox status
+    my_cruise.shared = cabinCheckbox.checked;
+    my_cruise.breakfast = breakfastCheckbox.checked;
+    my_cruise.pool = poolCheckbox.checked;
+
+    // Display the selected cruise options
+    let cruiseResultElement = document.getElementById("cruiseResult");
+    cruiseResultElement.innerHTML = "Selected Cruise Options: " + JSON.stringify(my_cruise);
+}
+
+// Function to update cruise properties
+function updateCruise() {
+        // Get the values from the input elements
+        let daysValue = document.getElementById("days").value;
+        let priceValue = document.getElementById("price").value;
+
+        // Set properties of my_cruise based on input values
+        my_cruise.days = daysValue;
+        my_cruise.price = priceValue;
+
+        // Display the updated cruise options
+        let cruiseResultElement = document.getElementById("cruiseResult");
+        cruiseResultElement.innerHTML = "Updated Cruise Options: " + JSON.stringify(my_cruise);
+    }
+</script>
+
+</body>
+</html> 
