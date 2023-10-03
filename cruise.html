@@ -32,7 +32,7 @@
     <!-- Add a button to update the cruise -->
     <input type="button" onclick="updateCruise()" value="Update the Cruise"><br>
 </form>
-<p id="cruiseResult"></p>
+<p id="updatecruise"></p>
 <body>
 
 <h2>Pranitha Reddy Policepatel goes on a cruise</h2>
@@ -63,7 +63,7 @@ function resolveForm (){
     }
 }
 // Declare a global variable to store cruise options
-var my_cruise = {};
+let my_cruise = {};
 
 // Function to select a cruise based on checkbox values
 function selectCruise() {
@@ -96,7 +96,7 @@ function updateCruise() {
         my_cruise.price = priceValue;
 
         // Display the updated cruise options
-        let cruiseResultElement = document.getElementById("cruiseResult");
+        let cruiseResultElement = document.getElementById("updatecruise");
         cruiseResultElement.innerHTML = "Updated Cruise Options: " + JSON.stringify(my_cruise);
     }
 </script>
