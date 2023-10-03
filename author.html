@@ -32,12 +32,19 @@
                 alert("You got it right");
                 out.innerHTML = `Correct Guess!  good: ${good}`;
             }
+            if(oops>=7){
+            // After 7 incorrect guesses, disable the button and show an alert
+            document.getElementById("guessButton").disabled = true;
+            alert("Sorry, ran out of guesses.");
+           }
             else {
                 oops = oops + 1;
                 alert("Sorry");
                 out.innerHTML = `Wrong Guess! oops: ${oops}`;
             }
-        }
+            
+    }
+        
 
         let useImage=1;
         function selectImage() {
