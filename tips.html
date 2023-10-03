@@ -24,15 +24,6 @@
     <input type="number" id="tip_percent" name="tip_percent" value="15"><br><br>
      <!-- Add the button for showing result -->
      <input type="button" onclick="tips()" value="Show tip"><br>
-    <!-- choose operation-->
-    <label for="operation">Choose Operation: </label><br>
-    <input type="radio" id="sum" name="operation" value="sum" onclick="chooseOp()"> 
-    <label for="sum">Sum</label><br>
-    <input type="radio" id="difference" name="operation" value="difference" onclick="chooseOp()"> 
-    <label for="difference">Difference</label><br>
-    <input type="radio" id="product" name="operation" value="product" onclick="chooseOp()">
-    <label for="product">Product</label><br>
-
      
 </form>
 
@@ -40,7 +31,7 @@
 <p id="tipsResults"> </p>
 <form>
     <!-- choose operation-->
-    <label for="operation">Choose Operation: </label><br>
+    <label for="operation"><h4>Choose Operation: </h4></label>
     <input type="radio" id="sum" name="operation" value="sum" onclick="chooseOp()"> 
     <label for="sum">Sum</label><br>
     <input type="radio" id="difference" name="operation" value="difference" onclick="chooseOp()"> 
@@ -69,13 +60,15 @@ function resolveForm (){
 }
 //tips function
 function tips() {
-    let baseAmount = document.getElementById("base_amount").value;
-    let tipPercent = document.getElementById("tip_percent").value;
+    let baseAmount = parseFloat(document.getElementById("base_amount").value);
+    let tipPercent = parseFloat(document.getElementById("tip_percent").value);
     let myOutput = "";
 
     for (let i = 0; i < 5; i++) {
-        let calculatedTip = parseFloat(baseAmount) * (parseFloat(tipPercent) + i * 4) / 100;
-        myOutput += (tipPercent + i * 4) + "% is calculated tip: $" + calculatedTip.toFixed(2) + "; "+"\n";
+        
+        let calculatedTip = (baseAmount * (tipPercent + i * 4)) / 100;
+        myOutput += (tipPercent+i*4)+ "% is calculated tip: $" + calculatedTip.toFixed(2) + "; "+"\n";
+        
     }
 
     let tipResultsElement = document.getElementById("tipsResults");
