@@ -6,18 +6,36 @@
  </head>
 <body>
 
-
+<div class="container">
 <h2>Author entry Pranitha Reddy Policepatel</h2>
+<style>
+    h2 {
+        color: #ec1717; /* Text color */
+        font-size: 24px; /* Font size */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center text */
+    }
+
+    label {
+        color: #0dcc30; /* Text color */
+        font-size: 16px; /* Font size */
+        font-weight: bold; /* Bold text */
+    }m
+</style>
 
     <form>
+        <div class="form-group">
         <label for="author_name">The hidden author name</label>
-        <input type="password" id="author_name" name="author_name" value="Dickens"> <br>
+        <input type="password" id="author_name" name="author_name" value="Dickens"> 
+        </div><br>
+        <div class="form-group"> 
         <label for="user_guess">Guess the author</label>
-        <input type="text" id="user_guess" name="user_guess"> <br>
+        <input type="text" id="user_guess" name="user_guess">
+       </div> <br>
         <input type="button" onclick="checkAuthor()" value="Check the guess">
     </form>
     <p id="result"> Right/Wrong?</p>
-    <div>
+    <div class="text-center">
          <img id="imageElement" src="paris.jpg" alt="Paris" width="100" height="100" onclick= "selectImage()">
     </div>
     <script>
