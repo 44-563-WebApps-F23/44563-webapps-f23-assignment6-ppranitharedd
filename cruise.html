@@ -4,18 +4,36 @@
  <title>Cruise Title</title>
  </head>
  <!-- Form group with three labeled checkbox input elements -->
-<form>
+ <style>
+    h2 {
+        color: hsl(0, 91%, 50%); /* Text color */
+        font-size: 24px; /* Font size */
+        font-weight: bold; /* Bold text */
+        text-align: center; /* Center text */
+    }
+
+    label {
+        color: #0feb21; /* Text color */
+        font-size: 18px; /* Font size */
+        font-weight: bold; /* Bold text */
+    }
+</style>
+ <form>
+    <div class="form-group"> 
     <label for="cabin">Shares Cabin</label>
-    <input type="checkbox" id="cabin" value="True"><br>
-
+    <input type="checkbox" id="cabin" value="True"> 
+    </div><br>
+    <div class="form-group">
     <label for="breakfast">Breakfast</label>
-    <input type="checkbox" id="breakfast" value="True"><br>
-
+    <input type="checkbox" id="breakfast" value="True"> 
+    </div><br>
+    <div class="form-group"> 
     <label for="pool">Pool Pass</label>
-    <input type="checkbox" id="pool" value="False"><br>
-
+    <input type="checkbox" id="pool" value="False">
+    
     <!-- Add a button to select a cruise -->
     <input type="button" onclick="selectCruise()" value="Select a cruise"><br>
+    </div><br>
 </form>
 
 <!-- Tagged element to display results -->
@@ -23,18 +41,21 @@
 
 <!-- Form for updating cruise properties -->
 <form>
+    <div> 
     <label for="days">Enter the number of days</label>
-    <input type="text" id="days" value="7"><br>
-
+    <input type="text" id="days" value="7"> 
+   </div><br>
+   <div class="form-group"> 
     <label for="price">Enter price</label>
     <input type="text" id="price" value="1000"><br>
 
     <!-- Add a button to update the cruise -->
     <input type="button" onclick="updateCruise()" value="Update the Cruise"><br>
+</div>
 </form>
 <p id="updatecruise"></p>
 <body>
-
+<div class="container">
 <h2>Pranitha Reddy Policepatel goes on a cruise</h2>
 
 <form>
@@ -46,7 +67,7 @@
 
     <input type="button" onclick="resolveForm()" value="Get values from form">
 </form>
-
+</div>
 <script> 
 
 function resolveForm (){
